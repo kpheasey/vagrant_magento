@@ -30,3 +30,5 @@ To place a convenient Vagrant management tool in the toolbar, you can install va
 ```sh
 brew cask install 'vagrant-manager'
 ```
+
+After it's installed just launch the application.
