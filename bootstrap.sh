@@ -50,6 +50,7 @@ export DEBIAN_FRONTEND=noninteractive
 # Install MySQL quietly
 apt-get -q -y install mysql-server-5.5
 
+echo "Importing database..."
 mysql -u root -e "CREATE DATABASE IF NOT EXISTS magento;"
 mysql -u root magento < /vagrant/magento.sql
 mysql -u root -e "USE magento; UPDATE ${MAGENTO_TABLE_PREFIX}core_config_data SET value = 'http://192.168.50.50/' WHERE path LIKE '%base_url';"
@@ -58,5 +59,10 @@ mysql -u root -e "FLUSH PRIVILEGES;"
 
 # Set permissions
 # --------------------
-cd /vagrant
+echo "Setting Magento permissions..."
+cd /var/www/html
+mkdir var
 curl -sL https://goo.gl/b1NkHW | sudo bash
+
+# --------------------
+echo "Done"
