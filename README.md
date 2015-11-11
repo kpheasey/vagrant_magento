@@ -27,7 +27,12 @@ curl --remote-name https://raw.githubusercontent.com/kpheasey/vagrant_magento/ma
 - Update the `MAGENTO_ROOT` and `MAGENTO_TABLE_PREFIX` with appropriate values.
   - If Magento is in /public, then `MAGENTO_ROOT="/public"`
   - `MAGENTO_TABLE_PREFX` should include an underscore if necessary; `MAGENTO_TABLE_PREFIX="retail_"`
-- Start vagrant; `vagrant up`
+- Start vagrant
+
+```sh
+vagrant up
+````
+
 - Go to [http://192.168.50.50/](http://192.168.50.50/) in your browser
 
 NOTE: If you don't already have the ubuntu/trusty64 box installed, it will be downloaded.  This is a big download, but it only happens once.
