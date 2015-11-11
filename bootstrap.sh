@@ -52,7 +52,8 @@ apt-get -q -y install mysql-server-5.5
 
 mysql -u root -e "CREATE DATABASE IF NOT EXISTS magento;"
 mysql -u root magento < /vagrant/magento.sql
-mysql -u root -e "USE magento; UPDATE ${MAGENTO_TABLE_PREFIX}core_config_data SET value = 'http://192.168.50.50/' WHERE path LIKE '%base_url'; "
+mysql -u root -e "USE magento; UPDATE ${MAGENTO_TABLE_PREFIX}core_config_data SET value = 'http://192.168.50.50/' WHERE path LIKE '%base_url';"
+mysql -u root -e "USE magento; UPDATE ${MAGENTO_TABLE_PREFIX}core_config_data SET value = NULL WHERE path LIKE '%cookie_domain';"
 mysql -u root -e "FLUSH PRIVILEGES;"
 
 # Set permissions
