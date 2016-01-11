@@ -61,7 +61,7 @@ mysql -u root -e "FLUSH PRIVILEGES;"
 # --------------------
 echo "Setting Magento permissions..."
 cd /var/www/html
-mkdir var
+mkdir -p var
 curl -sL https://goo.gl/b1NkHW | sudo bash
 
 # --------------------
